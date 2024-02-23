@@ -1,5 +1,0 @@
-local M = {}
-
-local defaults = {
-
-}
