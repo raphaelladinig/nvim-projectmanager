@@ -1,9 +1,15 @@
-local config = require("projectmanager.config")
-local view = require("projectmanager.view")
+local config = require "projectmanager.config"
+local project = require "projectmanager.project"
+local dataDir = vim.fn.stdpath "data" .. "/projectmanager"
+
+if dataDir then
+    vim.fn.mkdir(dataDir, "p")
+end
 
 local M = {}
 
 M.setup = config.setup
-M.toggle = view.toggle
+M.createProject = project.createProject
+M.openProject = project.openProject
 
 return M
