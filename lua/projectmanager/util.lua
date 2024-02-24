@@ -1,9 +1,9 @@
 local M = {}
 
-function M.tableToFile(filename, table)
+function M.tableToFile(filename, tbl)
     local lines = {"return {"}
 
-    for k, v in pairs(table) do
+    for k, v in pairs(tbl) do
         table.insert(lines, string.format('    "%s",', tostring(v)))
     end
 
@@ -20,6 +20,16 @@ function M.tableFromFile(filename)
     else
         return nil
     end
+end
+
+function M.isDuplicate(projectname, projects)
+    -- Check if projectname already exists in projects
+    for _, name in ipairs(projects) do
+        if name == projectname then
+            return true
+        end
+    end
+    return false
 end
 
 return M
