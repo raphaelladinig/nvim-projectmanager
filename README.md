@@ -1,3 +1,9 @@
 # nvim-projectmanager
 
-All in one tool for project management in neovim.
+small tool for project management in neovim.
+
+# ToDo
+
+- finish README.md
+- finish doc
+- add load Template feature

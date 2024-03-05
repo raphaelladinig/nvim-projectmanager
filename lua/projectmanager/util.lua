@@ -1,7 +1,7 @@
 local M = {}
 
 function M.tableToFile(filename, tbl)
-    local lines = {"return {"}
+    local lines = { "return {" }
 
     for k, v in pairs(tbl) do
         table.insert(lines, string.format('    "%s",', tostring(v)))
@@ -23,13 +23,16 @@ function M.tableFromFile(filename)
 end
 
 function M.isDuplicate(projectname, projects)
-    -- Check if projectname already exists in projects
     for _, name in ipairs(projects) do
         if name == projectname then
             return true
         end
     end
     return false
+end
+
+function M.log(msg, hl)
+    vim.api.nvim_echo({ { "ProjectManager: " .. msg, hl } }, true, {})
 end
 
 return M

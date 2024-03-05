@@ -11,5 +11,8 @@ local M = {}
 M.setup = config.setup
 M.createProject = project.createProject
 M.openProject = project.openProject
+M.addToPinnedProjects = project.addToPinnedProjects
+M.removeFromPinnedProjects = project.removeFromPinnedProjects
+M.loadTemplate = project.loadTemplate
 
 return M

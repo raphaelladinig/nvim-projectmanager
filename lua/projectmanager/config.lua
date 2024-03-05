@@ -3,6 +3,7 @@ local M = {}
 local defaults = {
     default_project_dir = nil,
     number_of_recent_projects = 5,
+    templates = nil,
 }
 
 M.options = {}
