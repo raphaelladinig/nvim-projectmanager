@@ -8,7 +8,7 @@ small plugin for project management in neovim.
 - PMOpenProject
 - PMAddToPinnedProjects
 - PMRemoveFromPinnedProjects
-- LoadTemplate
+- PMLoadTemplate
 
 ## Installation
 ### Lazy
