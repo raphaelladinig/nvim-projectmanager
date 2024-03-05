@@ -1,6 +1,6 @@
-## nvim-projectmanager
+# nvim-projectmanager
 
-small tool for project management in neovim.
+small plugin for project management in neovim.
 
 ## Features
 
@@ -34,5 +34,6 @@ small tool for project management in neovim.
 
 ## ToDo
 
+- finish README
 - finish doc
 - add load Template feature
