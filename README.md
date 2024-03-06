@@ -25,7 +25,7 @@ small plugin for project management in neovim.
 - ### PMLoadTemplate
 
   Loads a template into the current working directory.
-  You can get some templates from my github repositorys.
+  You can get some templates from my [templates](https://github.com/raphaelladinig/templates).
 
 ## Installation
 
@@ -56,5 +56,4 @@ small plugin for project management in neovim.
 ## ToDo
 
 - finish doc
-- add load Template feature
-- Telescope Integration
+- Rework select Project to use Telescope

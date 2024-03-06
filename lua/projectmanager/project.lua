@@ -84,7 +84,7 @@ function M.loadTemplate()
         prompt = "Select Template",
     }, function(templatename)
         if templatename ~= nil then
-            vim.cmd("! cp -r " .. config.options.template_dir .. templatename .. " " .. config.options.default_project_dir)
+            vim.cmd("! cp -r " .. config.options.template_dir .. templatename .. "/. " .. vim.fn.getcwd())
             util.log("loaded " .. templatename, "NormalMsg")
         else
             util.log("please select a template", "ErrorMsg")
