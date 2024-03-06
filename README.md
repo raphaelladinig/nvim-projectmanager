@@ -1,7 +1,5 @@
 # nvim-projectmanager
 
-small plugin for project management in neovim.
-
 !!! THIS IS STILL IN DEVELOPMENT AND NOT READY FOR USE YET. NOT ALL FEATURES ARE IMPLEMENTED. !!!
 
 ## Features
