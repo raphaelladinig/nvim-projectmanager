@@ -53,7 +53,3 @@ You need to set default_project_dir and template_dir in the setup function, or i
     template_dir = nil, -- absolute Path !!!
 }
 ```
-
-## ToDo
-
-- Rework openProject to use Telescope
