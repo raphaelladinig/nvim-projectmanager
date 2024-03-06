@@ -23,7 +23,7 @@
 - ### PMLoadTemplate
 
   Loads a template into the current working directory.
-  You can get some templates from my [templates](https://github.com/raphaelladinig/templates).
+  You can get some templates from my [templates](https://github.com/raphaelladinig/templates), or make your own.
 
 ## Installation
 
