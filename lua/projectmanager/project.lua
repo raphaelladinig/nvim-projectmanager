@@ -66,7 +66,7 @@ function M.createProject()
 end
 
 function M.openProject()
-    vim.ui.select(recentProjects, {
+    vim.ui.select(util.concatenate_tables(pinnedProjects, recentProjects), {
         prompt = "Select Project",
     }, function(projectname)
         if projectname ~= nil then

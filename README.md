@@ -45,6 +45,8 @@ small plugin for project management in neovim.
 
 ## Config
 
+You need to set default_project_dir and template_dir in the setup function, or it won't work.
+
 ```lua
 {
     default_project_dir = nil, -- absolute Path !!!
@@ -55,5 +57,4 @@ small plugin for project management in neovim.
 
 ## ToDo
 
-- finish doc
-- Rework select Project to use Telescope
+- Rework openProject to use Telescope
