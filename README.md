@@ -4,11 +4,11 @@ small plugin for project management in neovim.
 
 ## Features
 
-- PMCreateProject
-- PMOpenProject
-- PMAddToPinnedProjects
-- PMRemoveFromPinnedProjects
-- PMLoadTemplate
+- ### PMCreateProject
+- ### PMOpenProject
+- ### PMAddToPinnedProjects
+- ### PMRemoveFromPinnedProjects
+- ### PMLoadTemplate
 
 ## Installation
 ### Lazy
@@ -17,7 +17,8 @@ small plugin for project management in neovim.
   "raphaelladinig/nvim-projectmanager",
   config = function()
       require("projectmanager").setup({
-          default_project_dir = "/home/username/Projects",
+          project_dir = "/home/username/Projects",
+          template_dir = "/home/username/Projects/templates",
       })
   end,
 }
@@ -26,14 +27,14 @@ small plugin for project management in neovim.
 ## Config
 ```lua
 {
-    default_project_dir = nil, -- absolute Path !!!
+    project_dir = nil, -- absolute Path !!!
     number_of_recent_projects = 5,
-    templates = nil,
+    template_dir = nil, -- absolute Path !!!
+
 }
 ```
 
 ## ToDo
 
-- finish README
 - finish doc
 - add load Template feature
