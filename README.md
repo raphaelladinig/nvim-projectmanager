@@ -1,7 +1,5 @@
 # nvim-projectmanager
 
-!!! THIS IS STILL IN DEVELOPMENT AND NOT READY FOR USE YET. NOT ALL FEATURES ARE IMPLEMENTED. !!!
-
 ## Features
 
 - ### PMCreateProject
