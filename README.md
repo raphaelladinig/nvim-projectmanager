@@ -1,9 +1,5 @@
 # nvim-projectmanager
 
-small plugin for project management in neovim.
-
-!!! THIS IS STILL IN DEVELOPMENT AND NOT READY FOR USE YET. NOT ALL FEATURES ARE IMPLEMENTED. !!!
-
 ## Features
 
 - ### PMCreateProject
@@ -25,7 +21,7 @@ small plugin for project management in neovim.
 - ### PMLoadTemplate
 
   Loads a template into the current working directory.
-  You can get some templates from my [templates](https://github.com/raphaelladinig/templates).
+  You can get some templates from my [templates](https://github.com/raphaelladinig/templates), or make your own.
 
 ## Installation
 
