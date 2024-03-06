@@ -56,7 +56,7 @@ end
 function M.createProject()
     vim.ui.input({ prompt = "Project name: " }, function(projectname)
         if projectname ~= nil then
-            vim.fn.mkdir(config.options.project_dir .. projectname, "p")
+            vim.fn.mkdir(config.options.default_project_dir .. projectname, "p")
             addToRecentProjects(projectname)
             util.log("created " .. projectname, "NormalMsg")
         else
@@ -70,7 +70,7 @@ function M.openProject()
         prompt = "Select Project",
     }, function(projectname)
         if projectname ~= nil then
-            vim.cmd("cd " .. config.options.project_dir .. projectname)
+            vim.cmd("cd " .. config.options.default_project_dir .. projectname)
             addToRecentProjects(projectname)
             util.log("opened " .. projectname, "NormalMsg")
         else
@@ -84,8 +84,7 @@ function M.loadTemplate()
         prompt = "Select Template",
     }, function(templatename)
         if templatename ~= nil then
-            -- still need to implement copying the template to the project directory 
-            
+            vim.cmd("! cp -r " .. config.options.template_dir .. templatename .. " " .. config.options.default_project_dir)
             util.log("loaded " .. templatename, "NormalMsg")
         else
             util.log("please select a template", "ErrorMsg")

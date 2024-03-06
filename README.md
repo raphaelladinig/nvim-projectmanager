@@ -7,28 +7,36 @@ small plugin for project management in neovim.
 ## Features
 
 - ### PMCreateProject
-Creates a new project in the project directory and opens it in a new buffer.
+
+  Creates a new project in the project directory and opens it in a new buffer.
 
 - ### PMOpenProject
-Opens a project in a new buffer.
+
+  Opens a project in a new buffer.
 
 - ### PMAddToPinnedProjects
-Adds a project to the pinned projects list.
+
+  Adds a project to the pinned projects list.
 
 - ### PMRemoveFromPinnedProjects
-Removes a project from the pinned projects list.
+
+  Removes a project from the pinned projects list.
 
 - ### PMLoadTemplate
-Loads a template into the current working directory.
+
+  Loads a template into the current working directory.
+  You can get some templates from my github repositorys.
 
 ## Installation
+
 ### Lazy
+
 ```lua
 {
   "raphaelladinig/nvim-projectmanager",
   config = function()
       require("projectmanager").setup({
-          project_dir = "/home/username/Projects",
+          default_project_dir = "/home/username/Projects",
           template_dir = "/home/username/Projects/templates",
       })
   end,
@@ -36,12 +44,12 @@ Loads a template into the current working directory.
 ```
 
 ## Config
+
 ```lua
 {
-    project_dir = nil, -- absolute Path !!!
+    default_project_dir = nil, -- absolute Path !!!
     number_of_recent_projects = 5,
     template_dir = nil, -- absolute Path !!!
-
 }
 ```
 
@@ -49,3 +57,4 @@ Loads a template into the current working directory.
 
 - finish doc
 - add load Template feature
+- Telescope Integration
