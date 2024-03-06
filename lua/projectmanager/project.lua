@@ -65,31 +65,8 @@ function M.createProject()
     end)
 end
 
-function M.openProject()
-    vim.ui.select(util.concatenate_tables(pinnedProjects, recentProjects), {
-        prompt = "Select Project",
-    }, function(projectname)
-        if projectname ~= nil then
-            vim.cmd("cd " .. config.options.default_project_dir .. projectname)
-            addToRecentProjects(projectname)
-            util.log("opened " .. projectname, "NormalMsg")
-        else
-            util.log("please select a project", "ErrorMsg")
-        end
-    end)
-end
-
-function M.loadTemplate()
-    vim.ui.select(vim.fn.readdir(config.options.template_dir), {
-        prompt = "Select Template",
-    }, function(templatename)
-        if templatename ~= nil then
-            vim.cmd("! cp -r " .. config.options.template_dir .. templatename .. "/. " .. vim.fn.getcwd())
-            util.log("loaded " .. templatename, "NormalMsg")
-        else
-            util.log("please select a template", "ErrorMsg")
-        end
-    end)
+function M.getProjects()
+    return util.concatenate_tables(pinnedProjects, recentProjects)
 end
 
 return M

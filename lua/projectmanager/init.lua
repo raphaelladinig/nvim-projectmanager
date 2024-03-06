@@ -1,5 +1,6 @@
 local config = require "projectmanager.config"
 local project = require "projectmanager.project"
+local template = require "projectmanager.template"
 local dataDir = vim.fn.stdpath "data" .. "/projectmanager"
 
 if dataDir then
@@ -10,9 +11,9 @@ local M = {}
 
 M.setup = config.setup
 M.createProject = project.createProject
-M.openProject = project.openProject
+M.getProjects = project.getProjects
+M.getTemplates = template.getTemplates
 M.addToPinnedProjects = project.addToPinnedProjects
 M.removeFromPinnedProjects = project.removeFromPinnedProjects
-M.loadTemplate = project.loadTemplate
 
 return M

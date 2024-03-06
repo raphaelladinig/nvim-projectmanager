@@ -30,6 +30,9 @@
 ```lua
 {
   "raphaelladinig/nvim-projectmanager",
+  dependencies = {
+      "nvim-telescope/telescope.nvim",
+  },
   config = function()
       require("projectmanager").setup({
           default_project_dir = "/home/username/Projects",
