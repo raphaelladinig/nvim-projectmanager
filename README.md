@@ -55,7 +55,21 @@ You need to set default_project_dir and template_dir in the setup function, or i
 ```lua
 {
     default_project_dir = nil, -- absolute Path !!!
-    number_of_recent_projects = 5,
     template_dir = nil, -- absolute Path !!!
+    number_of_recent_projects = 5,
 }
 ```
+
+## API
+
+- ### getPinnedProjects()
+
+  Returns a list of the pinned projects.
+
+- ### getRecentProjects()
+
+  Returns a list of the most recent projects.
+
+- ### getTemplates()
+
+  Returns a list of all templates.
