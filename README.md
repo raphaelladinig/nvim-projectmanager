@@ -44,6 +44,7 @@
           default_project_dir = "/home/username/Projects",
           template_dir = "/home/username/Projects/templates",
       })
+      require("telescope").load_extension("projectmanager")
   end,
 }
 ```
