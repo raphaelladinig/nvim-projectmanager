@@ -1,5 +1,7 @@
 # nvim-projectmanager
 
+!!! WORK IN PROGRESS !!!
+
 ## Features
 
 - Create, open, and manage projects
@@ -14,22 +16,26 @@
 
   Creates a new project in the project directory and opens it in a new buffer.
 
-- ### PMOpenProject
-
-  Opens a project in a new buffer.
-
 - ### PMAddToPinnedProjects
 
   Adds a project to the pinned projects list.
 
-- ### PMRemoveFromPinnedProjects
+- ### PMProjects
 
-  Removes a project from the pinned projects list.
+  Opens a telescope window with all projects.
 
-- ### PMLoadTemplate
+- ### PMPinnedProjects
 
-  Loads a template into the current working directory.
+  Opens a telescope window with all pinned projects.
+
+- ### PMTemplates
+
+  Opens a telescope window with all templates.
   You can get some templates from my [templates](https://github.com/raphaelladinig/templates), or make your own.
+
+- ### PMClearRecentProjects
+
+  Clears the recent projects list.
 
 ## Installation
 
@@ -80,3 +86,4 @@ You need to set default_project_dir and template_dir in the setup function, or i
 ## ToDo
 
 - Write doc & fix README
+- Optimizations & bug fixes

@@ -56,6 +56,12 @@ function M.createProject()
     end)
 end
 
+function M.openProject(projectname)
+    addToRecentProjects(projectname)
+    vim.cmd("!cd " .. config.options.default_project_dir .. projectname)
+    util.log("opened " .. projectname, "NormalMsg")
+end
+
 function M.getRecentProjects()
     return recentProjects
 end
@@ -67,7 +73,7 @@ end
 function M.clearRecentProjects()
     recentProjects = {}
     util.tableToFile(recentProjectsFile, recentProjects)
-            util.log("cleared project history")
+    util.log "cleared project history"
 end
 
 return M
