@@ -2,6 +2,12 @@
 
 ## Features
 
+- Create, open, and manage projects
+
+- Telescope integration
+
+## Commands
+
 - ### PMCreateProject
 
   Creates a new project in the project directory and opens it in a new buffer.
