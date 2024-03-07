@@ -73,3 +73,7 @@ You need to set default_project_dir and template_dir in the setup function, or i
 - ### getTemplates()
 
   Returns a list of all templates.
+
+## ToDO
+
+- Write doc & fix README
