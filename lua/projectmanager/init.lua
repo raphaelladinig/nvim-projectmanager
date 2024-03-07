@@ -13,7 +13,7 @@ M.setup = config.setup
 M.createProject = project.createProject
 M.addToPinnedProjects = project.addToPinnedProjects
 M.getTemplates = template.getTemplates
-M.getProjects = project.getProjects
+M.getRecentProjects = project.getRecentProjects
 M.getPinnedProjects = project.getPinnedProjects
 
 return M

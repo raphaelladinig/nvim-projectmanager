@@ -34,14 +34,12 @@ function M.addToPinnedProjects()
     end)
 end
 
-function removeFromPinnedProjects(projectname)
-    if projectname ~= nil then
-        for i, v in ipairs(pinnedProjects) do
-            if v == projectname then
-                table.remove(pinnedProjects, i)
-                util.tableToFile(pinnedProjectsFile, pinnedProjects)
-                util.log("removed " .. projectname, "NormalMsg")
-            end
+function M.removeFromPinnedProjects(projectname)
+    for i, v in ipairs(pinnedProjects) do
+        if v == projectname then
+            table.remove(pinnedProjects, i)
+            util.tableToFile(pinnedProjectsFile, pinnedProjects)
+            util.log("removed " .. projectname, "NormalMsg")
         end
     end
 end

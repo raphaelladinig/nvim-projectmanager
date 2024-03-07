@@ -22,7 +22,7 @@ function M.tableFromFile(filename)
     end
 end
 
-function M.concatenate_tables(t1, t2)
+function M.concatenateTables(t1, t2)
     local result = {}
     for _, v in ipairs(t1) do
         table.insert(result, v)

@@ -1,4 +1,5 @@
 local projectmanager = require "projectmanager"
+local util = require "projectmanager.util"
 local has_telescope, telescope = pcall(require, "telescope")
 local finders = require "telescope.finders"
 local pickers = require "telescope.pickers"
@@ -7,7 +8,7 @@ local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
 
 if not has_telescope then
-    projectmanager.util.log("This plugin requires nvim-telescope/telescope.nvim", "ErrorMsg")
+    util.log("This plugin requires nvim-telescope/telescope.nvim", "ErrorMsg")
     return
 end
 
@@ -16,7 +17,7 @@ local function projects(opts)
     pickers
         .new(opts, {
             finder = finders.new_table {
-                results = projectmanager.util.concatTables(projectmanager.getPinnedProjects(), projectmanager.getRecentProjects()),
+                results = util.concatenateTables(projectmanager.getPinnedProjects(), projectmanager.getRecentProjects()),
             },
             sorter = conf.generic_sorter(opts),
             attach_mappings = function(bufnr)
