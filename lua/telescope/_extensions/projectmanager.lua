@@ -1,5 +1,6 @@
 local projectmanager = require "projectmanager"
 local util = require "projectmanager.util"
+local template = require "projectmanager.template"
 local has_telescope, telescope = pcall(require, "telescope")
 local finders = require "telescope.finders"
 local pickers = require "telescope.pickers"
@@ -64,7 +65,7 @@ local function templates(opts)
                 actions.select_default:replace(function()
                     actions.close(bufnr)
                     local selection = action_state.get_selected_entry()
-                    projectmanager.template.loadTemplate(selection.value)
+                    template.loadTemplate(selection.value)
                 end)
                 return true
             end,

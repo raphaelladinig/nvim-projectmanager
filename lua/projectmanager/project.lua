@@ -58,7 +58,7 @@ end
 
 function M.openProject(projectname)
     addToRecentProjects(projectname)
-    vim.cmd("!cd " .. config.options.default_project_dir .. projectname)
+    vim.cmd("cd " .. config.options.default_project_dir .. projectname)
     util.log("opened " .. projectname, "NormalMsg")
 end
 
