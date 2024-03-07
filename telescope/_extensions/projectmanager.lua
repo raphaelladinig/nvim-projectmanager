@@ -1,23 +1,22 @@
 local projectmanager = require "projectmanager"
 local has_telescope, telescope = pcall(require, "telescope")
-
-if not has_telescope then
-    projectmanager.util.log("This plugin requires nvim-telescope/telescope.nvim", "ErrorMsg")
-    return
-end
-
 local finders = require "telescope.finders"
 local pickers = require "telescope.pickers"
 local conf = require("telescope.config").values
 local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
 
+if not has_telescope then
+    projectmanager.util.log("This plugin requires nvim-telescope/telescope.nvim", "ErrorMsg")
+    return
+end
+
 local function projects(opts)
     opts = opts or {}
     pickers
         .new(opts, {
             finder = finders.new_table {
-                results = projectmanager.getProjects(),
+                results = projectmanager.util.concatTables(projectmanager.getPinnedProjects(), projectmanager.getRecentProjects()),
             },
             sorter = conf.generic_sorter(opts),
             attach_mappings = function(bufnr)
@@ -25,6 +24,26 @@ local function projects(opts)
                     actions.close(bufnr)
                     local selection = action_state.get_selected_entry()
                     projectmanager.openProject(selection.value)
+                end)
+                return true
+            end,
+        })
+        :find()
+end
+
+local function pinnedProjects(opts)
+    opts = opts or {}
+    pickers
+        .new(opts, {
+            finder = finders.new_table {
+                results = projectmanager.getPinnedProjects(),
+            },
+            sorter = conf.generic_sorter(opts),
+            attach_mappings = function(bufnr)
+                actions.select_default:replace(function()
+                    actions.close(bufnr)
+                    local selection = action_state.get_selected_entry()
+                    projectmanager.removeFromPinnedProjects(selection.value)
                 end)
                 return true
             end,
@@ -55,6 +74,7 @@ end
 return telescope.register_extension {
     exports = {
         projects = projects,
+        pinnedProjects = pinnedProjects,
         templates = templates,
     },
 }

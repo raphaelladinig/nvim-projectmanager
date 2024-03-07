@@ -34,23 +34,16 @@ function M.addToPinnedProjects()
     end)
 end
 
-function M.removeFromPinnedProjects()
-    vim.ui.select(pinnedProjects, {
-        prompt = "Select Project",
-    }, function(projectname)
-        if projectname ~= nil then
-            for i, v in ipairs(pinnedProjects) do
-                if v == projectname then
-                    table.remove(pinnedProjects, i)
-                    util.tableToFile(pinnedProjectsFile, pinnedProjects)
-                    break
-                end
+function removeFromPinnedProjects(projectname)
+    if projectname ~= nil then
+        for i, v in ipairs(pinnedProjects) do
+            if v == projectname then
+                table.remove(pinnedProjects, i)
+                util.tableToFile(pinnedProjectsFile, pinnedProjects)
+                util.log("removed " .. projectname, "NormalMsg")
             end
-            util.log("removed " .. projectname, "NormalMsg")
-        else
-            util.log("please select a project", "ErrorMsg")
         end
-    end)
+    end
 end
 
 function M.createProject()
@@ -65,8 +58,12 @@ function M.createProject()
     end)
 end
 
-function M.getProjects()
-    return util.concatenate_tables(pinnedProjects, recentProjects)
+function M.getRecentProjects()
+    return recentProjects
+end
+
+function M.getPinnedProjects()
+    return pinnedProjects
 end
 
 return M

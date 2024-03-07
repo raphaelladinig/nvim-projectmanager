@@ -1,3 +1,5 @@
 command! -nargs=0 PMCreateProject lua require("projectmanager").createProject()
+command! -nargs=0 PMProject lua  vim.cmd(":Telescope projectmanager projects<CR>")
 command! -nargs=0 PMAddToPinnedProjects lua require("projectmanager").addToPinnedProjects()
-command! -nargs=0 PMRemoveFromPinnedProjects lua require("projectmanager").removeFromPinnedProjects()
+command! -nargs=0 PMPinnedProjects lua vim.cmd(":Telescope projectmanager pinnedProjects<CR>") 
+command! -nargs=0 PMTemplates lua vim.cmd(":Telescope projectmanager templates<CR>") 
