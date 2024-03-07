@@ -4,6 +4,8 @@
 
 - Create, open, and manage projects
 
+- Load templates
+
 - Telescope integration
 
 ## Commands

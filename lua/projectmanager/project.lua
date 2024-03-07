@@ -64,4 +64,10 @@ function M.getPinnedProjects()
     return pinnedProjects
 end
 
+function M.clearRecentProjects()
+    recentProjects = {}
+    util.tableToFile(recentProjectsFile, recentProjects)
+            util.log("cleared project history")
+end
+
 return M

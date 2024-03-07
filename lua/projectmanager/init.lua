@@ -15,5 +15,6 @@ M.addToPinnedProjects = project.addToPinnedProjects
 M.getTemplates = template.getTemplates
 M.getRecentProjects = project.getRecentProjects
 M.getPinnedProjects = project.getPinnedProjects
+M.clearRecentProjects = project.clearRecentProjects
 
 return M
