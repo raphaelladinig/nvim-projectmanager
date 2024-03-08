@@ -1,10 +1,9 @@
 <div align="center">
-# nvim-projectmanager
-
-![logo](./assets/logo.jpg)
-
-<img alt="Harpoon Man" height="280" src="/assets/harpoon-icon.png" />
+<h1>nvim-projectmanager</h1>
+<img height="280" src="./assets/logo.jpg" />
 </div>
+
+---
 
 ![screenshot](./assets/screenshot-2024-03-08-16-32-36.png)
 
