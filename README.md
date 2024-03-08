@@ -1,7 +1,5 @@
 # nvim-projectmanager
 
-!!! WORK IN PROGRESS !!!
-
 ![screenshot](./assets/screenshot-2024-03-08-16-32-36.png)
 
 ## Features
@@ -84,6 +82,6 @@ You need to set default_project_dir and template_dir in the setup function, or i
 ## ToDo
 
 - Write doc
-- Optimizations & bug fixes
 - Make it possible to have Projects outside of default_project_dir
 - add feature to delete Projects
+- improve telescope integration
