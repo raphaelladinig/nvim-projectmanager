@@ -3,10 +3,6 @@
 <img height="280" src="./assets/logo.jpg" />
 </div>
 
----
-
-![screenshot](./assets/screenshot-2024-03-08-16-32-36.png)
-
 ## Features
 
 - Create, open, and manage projects
@@ -24,6 +20,8 @@
 - ### PMProjects
 
   Opens a telescope window with all projects.
+
+  ![screenshot](./assets/screenshot-2024-03-08-16-32-36.png)
 
 - ### PMTemplates
 
