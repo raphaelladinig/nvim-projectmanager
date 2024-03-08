@@ -2,6 +2,8 @@
 
 !!! WORK IN PROGRESS !!!
 
+![screenshot](./assets/screenshot-2024-03-08-16-28-34.png)
+
 ## Features
 
 - Create, open, and manage projects
@@ -14,11 +16,7 @@
 
 - ### PMCreateProject
 
-  Creates a new project in the project directory and opens it in a new buffer.
-
-- ### PMAddToPinnedProjects
-
-  Adds a project to the pinned projects list.
+  Creates a new project in the default_project_dir and changes the working directory.
 
 - ### PMProjects
 
@@ -62,6 +60,10 @@ You need to set default_project_dir and template_dir in the setup function, or i
     default_project_dir = nil, -- absolute Path !!!
     template_dir = nil, -- absolute Path !!!
     number_of_recent_projects = 5,
+    keybinds = { -- Telescope binds
+        addToPinnedProjects = "<c-p>",
+        removeFromPinnedProjects = "<c-r>",
+    },
 }
 ```
 
@@ -81,8 +83,7 @@ You need to set default_project_dir and template_dir in the setup function, or i
 
 ## ToDo
 
-- Write doc & fix README
+- Write doc
 - Optimizations & bug fixes
 - Make it possible to have Projects outside of default_project_dir
 - add feature to delete Projects
-- improve telescope integration

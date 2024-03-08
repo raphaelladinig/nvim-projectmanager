@@ -4,6 +4,10 @@ local defaults = {
     default_project_dir = nil,
     template_dir = nil,
     number_of_recent_projects = 5,
+    keybinds = {
+        addToPinnedProjects = "<c-p>",
+        removeFromPinnedProjects = "<c-r>",
+    },
 }
 
 M.options = {}

@@ -1,5 +1,6 @@
 local projectmanager = require "projectmanager"
 local util = require "projectmanager.util"
+local config = require "projectmanager.config"
 local template = require "projectmanager.template"
 local has_telescope, telescope = pcall(require, "telescope")
 local finders = require "telescope.finders"
@@ -20,20 +21,19 @@ local function projects(opts)
             results_title = "Projects",
             prompt_title = "Name",
             finder = finders.new_table {
-                results = util.concatenateTables(
-                    projectmanager.getPinnedProjects(),
-                    projectmanager.getRecentProjects()
+                results = util.removeDuplicates(
+                    util.concatenateTables(projectmanager.getPinnedProjects(), projectmanager.getRecentProjects())
                 ),
             },
             sorter = conf.generic_sorter(opts),
             attach_mappings = function(bufnr, map)
-                map({ "n", "i" }, "<c-p>", function()
+                map({ "n", "i" }, config.options.keybinds.addToPinnedProjects, function()
+                    actions.close(bufnr)
                     projectmanager.addToPinnedProjects(action_state.get_selected_entry().value)
-                    actions.close(bufnr)
                 end)
-                map({ "n", "i" }, "<c-r>", function()
-                    projectmanager.removeFromPinnedProjects(action_state.get_selected_entry().value)
+                map({ "n", "i" }, config.options.keybinds.removeFromPinnedProjects, function()
                     actions.close(bufnr)
+                    projectmanager.removeFromPinnedProjects(action_state.get_selected_entry().value)
                 end)
 
                 actions.select_default:replace(function()

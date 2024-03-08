@@ -33,6 +33,16 @@ function M.concatenateTables(t1, t2)
     return result
 end
 
+function M.removeDuplicates(tbl)
+    local result = {}
+    for _, v in ipairs(tbl) do
+        if not M.isDuplicate(v, result) then
+            table.insert(result, v)
+        end
+    end
+    return result
+end
+
 function M.isDuplicate(projectname, projects)
     for _, name in ipairs(projects) do
         if name == projectname then
