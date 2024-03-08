@@ -27,11 +27,13 @@ local function projects(opts)
             },
             sorter = conf.generic_sorter(opts),
             attach_mappings = function(bufnr, map)
-                map("n", "<c-p>", function()
+                map({ "n", "i" }, "<c-p>", function()
                     projectmanager.addToPinnedProjects(action_state.get_selected_entry().value)
+                    actions.close(bufnr)
                 end)
-                map("n", "<c-r>", function()
+                map({ "n", "i" }, "<c-r>", function()
                     projectmanager.removeFromPinnedProjects(action_state.get_selected_entry().value)
+                    actions.close(bufnr)
                 end)
 
                 actions.select_default:replace(function()
