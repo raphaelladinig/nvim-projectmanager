@@ -2,7 +2,7 @@
 
 !!! WORK IN PROGRESS !!!
 
-![screenshot](./assets/screenshot-2024-03-08-16-28-34.png)
+![screenshot](./assets/screenshot-2024-03-08-16-32-36.png)
 
 ## Features
 
