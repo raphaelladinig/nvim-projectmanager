@@ -24,10 +24,6 @@
 
   Opens a telescope window with all projects.
 
-- ### PMPinnedProjects
-
-  Opens a telescope window with all pinned projects.
-
 - ### PMTemplates
 
   Opens a telescope window with all templates.
@@ -87,3 +83,5 @@ You need to set default_project_dir and template_dir in the setup function, or i
 
 - Write doc & fix README
 - Optimizations & bug fixes
+- Make it possible to have Projects outside of default_project_dir
+- add feature to delete Projects

@@ -20,36 +20,23 @@ local function projects(opts)
             results_title = "Projects",
             prompt_title = "Name",
             finder = finders.new_table {
-                results = util.concatenateTables(projectmanager.getPinnedProjects(), projectmanager.getRecentProjects()),
+                results = util.concatenateTables(
+                    projectmanager.getPinnedProjects(),
+                    projectmanager.getRecentProjects()
+                ),
             },
             sorter = conf.generic_sorter(opts),
-            attach_mappings = function(bufnr)
-                actions.select_default:replace(function()
-                    actions.close(bufnr)
-                    local selection = action_state.get_selected_entry()
-                    projectmanager.openProject(selection.value)
+            attach_mappings = function(bufnr, map)
+                map("n", "<c-p>", function()
+                    projectmanager.addToPinnedProjects(action_state.get_selected_entry().value)
                 end)
-                return true
-            end,
-        })
-        :find()
-end
+                map("n", "<c-r>", function()
+                    projectmanager.removeFromPinnedProjects(action_state.get_selected_entry().value)
+                end)
 
-local function pinnedProjects(opts)
-    opts = opts or {}
-    pickers
-        .new(opts, {
-            results_title = "Pinned Projects",
-            prompt_title = "Name",
-            finder = finders.new_table {
-                results = projectmanager.getPinnedProjects(),
-            },
-            sorter = conf.generic_sorter(opts),
-            attach_mappings = function(bufnr)
                 actions.select_default:replace(function()
                     actions.close(bufnr)
-                    local selection = action_state.get_selected_entry()
-                    projectmanager.removeFromPinnedProjects(selection.value)
+                    projectmanager.openProject(action_state.get_selected_entry().value)
                 end)
                 return true
             end,
@@ -82,7 +69,6 @@ end
 return telescope.register_extension {
     exports = {
         projects = projects,
-        pinnedProjects = pinnedProjects,
         templates = templates,
     },
 }

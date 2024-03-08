@@ -18,20 +18,14 @@ local function addToRecentProjects(projectname)
     end
 end
 
-function M.addToPinnedProjects()
-    vim.ui.select(recentProjects, {
-        prompt = "Select Project",
-    }, function(projectname)
-        if projectname ~= nil then
-            if not util.isDuplicate(projectname, pinnedProjects) then
-                table.insert(pinnedProjects, projectname)
-                util.tableToFile(pinnedProjectsFile, pinnedProjects)
-            end
-            util.log("added " .. projectname, "NormalMsg")
-        else
-            util.log("please select a project", "ErrorMsg")
-        end
-    end)
+function M.addToPinnedProjects(projectname)
+    if not util.isDuplicate(projectname, pinnedProjects) then
+        table.insert(pinnedProjects, projectname)
+        util.tableToFile(pinnedProjectsFile, pinnedProjects)
+        util.log("pinned " .. projectname, "NormalMsg")
+    else
+        util.log("already pinned " .. projectname, "ErrorMsg")
+    end
 end
 
 function M.removeFromPinnedProjects(projectname)
@@ -40,6 +34,8 @@ function M.removeFromPinnedProjects(projectname)
             table.remove(pinnedProjects, i)
             util.tableToFile(pinnedProjectsFile, pinnedProjects)
             util.log("removed " .. projectname, "NormalMsg")
+        else
+            util.log("not pinned " .. projectname, "ErrorMsg")
         end
     end
 end
