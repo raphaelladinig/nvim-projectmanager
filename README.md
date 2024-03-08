@@ -85,3 +85,4 @@ You need to set default_project_dir and template_dir in the setup function, or i
 - Optimizations & bug fixes
 - Make it possible to have Projects outside of default_project_dir
 - add feature to delete Projects
+- improve telescope integration
