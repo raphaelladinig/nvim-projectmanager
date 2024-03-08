@@ -17,6 +17,8 @@ local function projects(opts)
     opts = opts or {}
     pickers
         .new(opts, {
+            results_title = "Projects",
+            prompt_title = "Name",
             finder = finders.new_table {
                 results = util.concatenateTables(projectmanager.getPinnedProjects(), projectmanager.getRecentProjects()),
             },
@@ -37,6 +39,8 @@ local function pinnedProjects(opts)
     opts = opts or {}
     pickers
         .new(opts, {
+            results_title = "Pinned Projects",
+            prompt_title = "Name",
             finder = finders.new_table {
                 results = projectmanager.getPinnedProjects(),
             },
@@ -57,6 +61,8 @@ local function templates(opts)
     opts = opts or {}
     pickers
         .new(opts, {
+            results_title = "Templates",
+            prompt_title = "Name",
             finder = finders.new_table {
                 results = projectmanager.getTemplates(),
             },
