@@ -1,7 +1,13 @@
 <div align="center">
 <h1>nvim-projectmanager</h1>
-<img height="280" src="./assets/logo.jpg" />
+<img height="280" src="./assets/logo.jpg"/>
 </div>
+
+## Compatabilty
+
+![linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+probably works on Mac too haven't tested yet
 
 ## Features
 
@@ -9,13 +15,11 @@
 
 - Load templates
 
-- Telescope integration
-
-## Commands
+## Usage
 
 - ### PMCreateProject
 
-  Creates a new project in the default_project_dir and changes the working directory.
+  Creates a new project in the default_project_dir and changes the working directory, you can enter a full path to create a Project outside of the default_project_dir.
 
 - ### PMProjects
 
