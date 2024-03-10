@@ -21,6 +21,10 @@ probably works on Mac too haven't tested yet
 
   Creates a new project in the default_project_dir and changes the working directory, you can enter a full path to create a Project outside of the default_project_dir.
 
+- ### PMOpenProject
+    
+  opens a new project (full path needed)
+
 - ### PMProjects
 
   Opens a telescope window with all projects.
@@ -88,5 +92,6 @@ You need to set default_project_dir and template_dir in the setup function, or i
 
 ## ToDo
 
-- Write doc
-- improve telescope integration
+- Write proper doc and fix README
+- Error handling
+- Improve telescope integration

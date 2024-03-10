@@ -57,9 +57,21 @@ function M.createProject()
 end
 
 function M.openProject(projectname)
-    addToRecentProjects(projectname)
-    vim.cmd("cd " .. config.options.default_project_dir .. projectname)
-    util.log("opened " .. projectname, "NormalMsg")
+    if projectname ~= nil then
+        addToRecentProjects(projectname)
+        vim.cmd("cd " .. config.options.default_project_dir .. projectname)
+        util.log("opened " .. projectname, "NormalMsg")
+    else
+        vim.ui.input({ prompt = "Project name: " }, function(projectname)
+            if projectname ~= nil then
+                addToRecentProjects(projectname)
+                vim.cmd("cd " .. projectname)
+                util.log("opened " .. projectname, "NormalMsg")
+            else
+                util.log("please enter a name", "ErrorMsg")
+            end
+        end)
+    end
 end
 
 function M.getRecentProjects()
