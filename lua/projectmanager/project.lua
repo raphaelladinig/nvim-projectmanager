@@ -43,7 +43,11 @@ end
 function M.createProject()
     vim.ui.input({ prompt = "Project name: " }, function(projectname)
         if projectname ~= nil then
-            vim.fn.mkdir(config.options.default_project_dir .. projectname, "p")
+            if string.find(projectname, "/") then
+                vim.fn.mkdir(projectname, "p")
+            else
+                vim.fn.mkdir(config.options.default_project_dir .. projectname, "p")
+            end
             addToRecentProjects(projectname)
             util.log("created " .. projectname, "NormalMsg")
         else
