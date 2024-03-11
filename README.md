@@ -94,4 +94,3 @@ You need to set default_project_dir and template_dir in the setup function, or i
 
 - Write proper doc and fix README
 - Error handling
-- Improve telescope integration
