@@ -3,6 +3,8 @@
 <img height="280" src="./assets/logo.jpg"/>
 </div>
 
+If you have any feature request pls open an issue, i dont really know what to add anymore.
+
 ## Compatabilty
 
 ![linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
