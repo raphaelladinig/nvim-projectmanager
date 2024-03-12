@@ -11,4 +11,12 @@ function M.loadTemplate(templatename)
     util.log("loaded " .. templatename, "NormalMsg")
 end
 
+function M.templates()
+    if M.getTemplates() ~= nil then
+        vim.cmd "Telescope projectmanager templates"
+    else
+        util.log("no templates found", "ErrorMSG")
+    end
+end
+
 return M

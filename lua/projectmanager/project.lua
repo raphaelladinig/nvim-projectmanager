@@ -82,6 +82,14 @@ function M.openProject(projectname)
     end
 end
 
+function M.projects()
+    if next(recentProjects) == nil and next(pinnedProjects) == nil then
+        util.log("no projects found", "ErrorMsg")
+    else
+        vim.cmd "Telescope projectmanager projects"
+    end
+end
+
 function M.getRecentProjects()
     return recentProjects
 end
