@@ -1,6 +1,7 @@
 <div align="center">
-<h1>nvim-projectmanager</h1>
-<img height="280" src="./assets/logo.jpg"/>
+  <h1>nvim-projectmanager</h1>
+  <img height="280" src="./assets/logo.jpg"/>
+  <p>If you have any Feature suggsetions pls open a issue, i dont rly know what to add anymore</p>
 </div>
 
 ## Compatabilty
