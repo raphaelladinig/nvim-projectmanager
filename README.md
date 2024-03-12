@@ -4,6 +4,10 @@
   <p>If you have any Feature suggsetions pls open a issue, i dont rly know what to add anymore</p>
 </div>
 
+## ToDo
+
+- Write proper doc and fix README
+
 ## Compatabilty
 
 ![linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
@@ -89,7 +93,3 @@ You need to set default_project_dir and template_dir in the setup function, or i
 - ### getTemplates()
 
   Returns a list of all templates.
-
-## ToDo
-
-- Write proper doc and fix README
